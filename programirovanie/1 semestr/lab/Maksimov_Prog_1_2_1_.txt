@@ -1,0 +1,52 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	//z1 привествие и предаставление данных
+	cout << "Hi are you ready to test my program?" << '\n'
+		 << "Author: Maximov Yu.E." << '\t' << "Group : 1335" << '\t' << '\t' << "Version: 1.2.1." << '\n'
+		 << "Date: 10.01.2022" << '\t' << "Beginning: 10.01.2022" << '\t' << "Completion: never" << '\n'
+		 << "Calculation: P(x) = -2.4214x^10 - 52532.43x^8 + 624x^6" << '\n'
+		 << "Scheme: P(x) = -x^6(x^2(2.4214x^2 - 52532.43) + 624.3)" << '\n'
+		 << "Calculation: F(x) = -2.24x^12 - 23,73x^8 + 24,53x^2" << '\n'
+		 << "Scheme: F(x) = -x^2(x^6(2.24x^4 + 23,73) - 24.53)" << '\n'
+		 << "please enter (x) to solve the equation, ( 1,0 < x < 900000,0 and -900000,0 < x < -1,0 ) for best accuracy, use only 7 decimal places" <<'\n'
+		 << "=>  ";
+	//z2 введение х пользавателем
+	float x;
+	while (true) {
+		cin >> x;
+		if (cin.fail() || x > 900000 || x < -900000) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Error number" << '\n' << "=> ";
+		}
+		else 
+			break;
+	}
+	float y = x * x;
+	// x^2
+	float z = y * y;
+	// x^4
+	float a = z * y;
+	// x^6
+	//z3 вывод результатов
+	float p = 2.4214 * y - 52532.43;
+	cout << "the first step - is the result P(x): " << setw(15) << setprecision(4) << p << '\n';
+	p = (p * y) + 624.3;
+	cout << "the second step - is the result P(x): " << setw(15) << setprecision(4) << p << '\n';
+	p *= -a;
+	cout << "the third step - is the result P(x): " << setw(15) << setprecision(4) << p << '\n';
+	float f = (2.24 * z) + 23.73;
+	cout << "the first step - is the result F(x): " << setw(15) << setprecision(4) << f << '\n';
+	f = (f * a) - 24.53;
+	cout << "the second step - is the result F(x): " << setw(15) << setprecision(4) << f << '\n';
+	f *= -y;
+	float z = p * f;
+	cout << "the third step - is the result F(x): " << f << '\n'
+		 << "At x = " << setw(15) << setprecision(4) << x << '\n'
+		 << "P(x) * F(x) = " << setw(7) << setprecision(4)
+		 << z << '\n';
+	return 0;
+}

@@ -1,0 +1,223 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/16/2025 14:00:18"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    t_trig
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module t_trig_vlg_sample_tst(
+	T,
+	sampler_tx
+);
+input  T;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(T)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module t_trig_vlg_check_tst (
+	Q_dff,
+	Q_dlatch,
+	sampler_rx
+);
+input  Q_dff;
+input  Q_dlatch;
+input sampler_rx;
+
+reg  Q_dff_expected;
+reg  Q_dlatch_expected;
+
+reg  Q_dff_prev;
+reg  Q_dlatch_prev;
+
+reg  Q_dff_expected_prev;
+reg  Q_dlatch_expected_prev;
+
+reg  last_Q_dff_exp;
+reg  last_Q_dlatch_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	Q_dff_prev = Q_dff;
+	Q_dlatch_prev = Q_dlatch;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	Q_dff_expected_prev = Q_dff_expected;
+	Q_dlatch_expected_prev = Q_dlatch_expected;
+end
+
+
+
+// expected Q_dlatch
+initial
+begin
+	Q_dlatch_expected = 1'bX;
+end 
+
+// expected Q_dff
+initial
+begin
+	Q_dff_expected = 1'bX;
+end 
+// generate trigger
+always @(Q_dff_expected or Q_dff or Q_dlatch_expected or Q_dlatch)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected Q_dff = %b | expected Q_dlatch = %b | ",Q_dff_expected_prev,Q_dlatch_expected_prev);
+	$display("| real Q_dff = %b | real Q_dlatch = %b | ",Q_dff_prev,Q_dlatch_prev);
+`endif
+	if (
+		( Q_dff_expected_prev !== 1'bx ) && ( Q_dff_prev !== Q_dff_expected_prev )
+		&& ((Q_dff_expected_prev !== last_Q_dff_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q_dff :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_dff_expected_prev);
+		$display ("     Real value = %b", Q_dff_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_Q_dff_exp = Q_dff_expected_prev;
+	end
+	if (
+		( Q_dlatch_expected_prev !== 1'bx ) && ( Q_dlatch_prev !== Q_dlatch_expected_prev )
+		&& ((Q_dlatch_expected_prev !== last_Q_dlatch_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q_dlatch :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_dlatch_expected_prev);
+		$display ("     Real value = %b", Q_dlatch_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_Q_dlatch_exp = Q_dlatch_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#165000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module t_trig_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg T;
+// wires                                               
+wire Q_dff;
+wire Q_dlatch;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+t_trig i1 (
+// port map - connection between master ports and signals/registers   
+	.Q_dff(Q_dff),
+	.Q_dlatch(Q_dlatch),
+	.T(T)
+);
+
+// T
+initial
+begin
+	T = 1'b0;
+	T = #30000 1'b1;
+	# 10000;
+	repeat(6)
+	begin
+		T = 1'b0;
+		T = #10000 1'b1;
+		# 10000;
+	end
+	T = 1'b0;
+end 
+
+t_trig_vlg_sample_tst tb_sample (
+	.T(T),
+	.sampler_tx(sampler)
+);
+
+t_trig_vlg_check_tst tb_out(
+	.Q_dff(Q_dff),
+	.Q_dlatch(Q_dlatch),
+	.sampler_rx(sampler)
+);
+endmodule
+

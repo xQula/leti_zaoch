@@ -1,0 +1,65 @@
+Manager: Start new task designer 1 WEAK 7
+Designer 1: Start new task WEAK 7
+Designer 1: Finish task WEAK 7
+Manager: Start new task designer 2 WEAK 7
+Designer 2: Start new task WEAK 7
+Designer 2: Finish task WEAK 7
+Manager: Start new task designer 1 PRIORITY 1
+Designer 1: Start new task PRIORITY 1
+Manager: Start new task designer 3 WEAK 7
+Designer 3: Start new task WEAK 7
+Designer 1: Finish task PRIORITY 1
+Designer 3: Finish task WEAK 7
+Manager: Start new task designer 2 PRIORITY 1
+Designer 2: Start new task PRIORITY 1
+Manager: Start new task designer 4 WEAK 7
+Designer 4: Start new task WEAK 7
+Designer 2: Finish task PRIORITY 1
+Manager: Start new task designer 1 WEAK 6
+Designer 1: Start new task WEAK 6
+Manager: Start new task designer 3 PRIORITY 1
+Designer 3: Start new task PRIORITY 1
+Designer 4: Finish task WEAK 7
+Designer 1: Finish task WEAK 6
+Designer 3: Finish task PRIORITY 1
+Manager: Start new task designer 4 PRIORITY 1
+Designer 4: Start new task PRIORITY 1
+Manager: Start new task designer 2 WEAK 6
+Designer 2: Start new task WEAK 6
+Designer 4: Finish task PRIORITY 1
+Manager: Start new task designer 1 WEAK 5
+Designer 1: Start new task WEAK 5
+Designer 2: Finish task WEAK 6
+Manager: Start new task designer 3 WEAK 6
+Designer 3: Start new task WEAK 6
+Designer 1: Finish task WEAK 5
+Manager: Start new task designer 2 WEAK 5
+Designer 2: Start new task WEAK 5
+Designer 3: Finish task WEAK 6
+Manager: Start new task designer 4 WEAK 6
+Designer 4: Start new task WEAK 6
+Designer 2: Finish task WEAK 5
+Manager: Start new task designer 1 PRIORITY 0
+Designer 1: Start new task PRIORITY 0
+Manager: Start new task designer 3 WEAK 5
+Designer 3: Start new task WEAK 5
+Designer 4: Finish task WEAK 6
+Designer 1: Finish task PRIORITY 0
+Designer 3: Finish task WEAK 5
+Manager: Start new task designer 2 PRIORITY 0
+Designer 2: Start new task PRIORITY 0
+Manager: Start new task designer 4 WEAK 5
+Designer 4: Start new task WEAK 5
+Designer 2: Finish task PRIORITY 0
+Designer 1: Start new task WEAK 4
+Designer 4: Finish task WEAK 5
+Manager: Start new task designer 3 PRIORITY 0
+Designer 3: Start new task PRIORITY 0
+Designer 1: Finish task WEAK 4
+Manager: Start new task designer 2 WEAK 4
+Designer 2: Start new task WEAK 4
+Designer 3: Finish task PRIORITY 0
+Manager: Start new task designer 4 PRIORITY 0
+Designer 4: Start new task PRIORITY 0
+Designer 2: Finish task WEAK 4
+Designer 1: Start new task WEAK 3

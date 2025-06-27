@@ -1,0 +1,84 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+	//z1 привествие и предаставление данных
+	cout << "Hi are you ready to test my program?" << '\n'
+		<< "Author: Maximov Yu.E." << '\t' << "Group : 1335" << '\t' << '\t' << "Version: 1.6.1." << '\n'
+		<< "Date: 10.01.2022" << '\t' << "Beginning: 10.01.2022" << '\t' << "Completion: never" << '\n'
+		<< "Calculation: P(x) = (q^i*x^(4i))/(4i)! q = 1" << '\n';
+	float* ptrA, * ptrS, eps, x, a;
+	int i = 0, q;
+	cout << "Please enter X ( -10.0 < x < 10.0) => ";
+	while (true) {
+		cin >> x;
+		if (cin.fail() || x > 10.0 || x < -10.0) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			switch (i) {
+			case 1: cout << "please think again, this is your " << ++i << " mistake, X =>" << '\n'; break;
+			case 2: cout << "please think again, this is your " << ++i << " mistake X =>" << '\n'; break;
+			case 3: cout << "please think again, this is your " << ++i << " mistake X =>" << '\n'; exit(0);
+			}
+		}
+		else {
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+		}
+	}
+	cout << "Please enter Epsilon (0 <= x <= 1e-10) => ";
+	i = 1;
+	while (true) {
+		cin >> eps;
+		if (cin.fail() || eps <= 0 || eps >= 1e-10) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			switch (i) {
+			case 1: cout << "please think again, this is your " << i++ << " mistake EPSILON => "; break;
+			case 2: cout << "please think again, this is your " << i++ << " mistake EPSILON => "; break;
+			case 3: cout << "please think again, this is your " << i << " mistake EPSILON => "; exit(0);
+			}
+		}
+		else {
+			a = 0.66;
+			while (true){
+				++i;
+				a = a * (pow(x, 4) / (static_cast<float>((4 * i + 4)) * static_cast<float>((4 * i + 3)) * static_cast<float>((4 * i + 2)) * static_cast<float>((4 * i + 1))));
+				if (fabs(a) < eps || i > 1000) {
+					q = i;
+					break;
+				}
+			}
+			ptrA = new (nothrow) float[q];
+			ptrS = new (nothrow) float[q];
+			ptrA[0] = 0.66, ptrS[0] = ptrA[0], i = 0;;
+			while (true) {
+				i++;
+				if (fabs(*(ptrA+i - 1)) < eps || i > 1000)
+					break;
+				*(ptrA+i) = *(ptrA+i - 1) * static_cast<float>((pow(x, 4)) / (static_cast<float>((4 * i + 4)) * static_cast<float>((4 * i + 3)) * static_cast<float>((4 * i + 2)) * static_cast<float>((4 * i + 1))));
+				*(ptrS+i) = *(ptrS+i - 1) + *(ptrA+i);
+				q = i;
+			}
+			for (int i = 0; i <= q; i++) {
+				if (fabs(*(ptrA+i)) < eps || i > 1000)
+					break;
+				cout.unsetf(ios::showpos);
+				cout << setw(5) << i << " | ";
+				cout.setf(ios::showpos | ios::showpoint | ios::scientific);
+				cout << setw(12) << setprecision(10) << *(ptrA+i) << " | ";
+				cout.setf(ios::showpos | ios::showpoint | ios::scientific);
+				cout << setw(12) << setprecision(10) << *(ptrS+i) << " | " << '\n';
+			}
+			break;
+		}
+	}
+	ptrA = nullptr;
+	ptrS = nullptr;
+	delete[] ptrA;
+	delete[] ptrS;
+	return 0;
+}
+	

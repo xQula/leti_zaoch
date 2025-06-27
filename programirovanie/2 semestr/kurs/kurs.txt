@@ -1,0 +1,417 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+class MyString {
+public:
+
+    MyString() {
+        str = nullptr;
+        length = 0;
+    }
+
+    MyString(const char* str) {
+
+        length = strlen(str);
+        this->str = new char[length + 1];
+        for (int i = 0; i < length; i++)
+        {
+            this->str[i] = str[i];
+        }
+        this->str[length] = '\0';
+
+    }
+
+    MyString(string& str) {
+
+        length = str.length();
+        this->str = new char[length + 1];
+        for (int i = 0; i < length; i++)
+        {
+            this->str[i] = str[i];
+        }
+        this->str[length] = '\0';
+
+    }
+
+    ~MyString() {
+        delete[] this->str;
+    }
+
+    MyString(const MyString& other) {
+        length = strlen(other.str);
+        this->str = new char[length + 1];
+
+        for (int i = 0; i < length; i++)
+        {
+            this->str[i] = other.str[i];
+        }
+
+        this->str[length] = '\0';
+    }
+
+    MyString& operator =(const MyString& other) {
+        if (this->str != nullptr)
+        {
+            delete[] str;
+        }
+
+        length = strlen(other.str);
+        this->str = new char[length + 1];
+
+        for (int i = 0; i < length; i++)
+        {
+            this->str[i] = other.str[i];
+        }
+
+        this->str[length] = '\0';
+
+        return *this;
+
+    }
+
+    MyString operator+(const MyString& other) {
+
+        MyString newStr;
+        int thisLength = strlen(this->str);
+        int otherLength = strlen(other.str);
+        newStr.length = thisLength + otherLength;
+        newStr.str = new char[thisLength + otherLength + 1];
+        int i = 0;
+        for (; i < thisLength; i++)
+        {
+            newStr.str[i] = this->str[i];
+        }
+        for (int j = 0; j < otherLength; j++, i++)
+        {
+            newStr.str[i] = other.str[j];
+        }
+        newStr.str[thisLength + otherLength] = '\0';
+        return newStr;
+    }
+
+    int Length() {
+        return length;
+    }
+
+    bool operator ==(const MyString& other) {
+        if (this->length != other.length)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < this->length; i++)
+        {
+            if (this->str[i] != other.str[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool operator !=(const MyString& other) {
+        return !(this->operator==(other));
+    }
+
+    char& operator [](int index) {
+        return this->str[index];
+    }
+    MyString(MyString&& other) noexcept {
+        this->length = other.length;
+        this->str = other.str;
+        other.str = nullptr;
+    }
+
+    friend MyString erase(int elem, MyString& other) {
+        for (; elem < other.length; elem++) {
+            other.str[elem + 1] = other.str[elem + 2];
+        }
+        other.length--;
+        MyString newOther;
+        newOther.length = other.length;
+        newOther.str = new char[other.length];
+        for (int a = 0; a < other.length; a++) {
+            newOther[a] = other[a];
+        }
+        return newOther;
+    }
+
+    friend std::ostream& operator<< (std::ostream& out, const MyString& other) {
+        for (int a = 0; a < other.length; a++) {
+            out << other.str[a];
+        }
+        return out;
+    }
+
+    friend void Print(const MyString& other) {
+        for (int a = 0; a < other.length; a++)
+            std::cout << other.str[a];
+    }
+
+private:
+    char* str;
+    int length;
+};
+
+class List
+{
+public:
+	List();
+	~List();
+	void pop_front();
+	void push_back(MyString data);
+	void clear();
+	int getSize() { return Size; }
+	MyString& operator[](const int index);
+	void push_front(MyString data);
+	void insert(MyString data, int index);
+	void removeAt(int index);
+	void pop_back();
+
+private:
+
+
+	
+	class Node{
+	public:
+		Node* pNext;
+		MyString data;
+		Node(MyString data = MyString(), Node* pNext = nullptr){
+			this->data = data;
+			this->pNext = pNext;
+		}
+	};
+	int Size;
+	Node* head;
+};
+
+
+List::List(){
+	Size = 0;
+	head = nullptr;
+}
+
+List::~List(){
+	clear();
+}
+
+
+void List::pop_front(){
+	Node* temp = head;
+	head = head->pNext;
+	delete temp;
+	Size--;
+}
+
+void List::push_back(MyString data){
+	if (head == nullptr){
+		head = new Node(data);
+	}
+	else{
+		Node* current = this->head;
+		while (current->pNext != nullptr){
+			current = current->pNext;
+		}
+		current->pNext = new Node(data);
+	}
+	Size++;
+}
+
+void List::clear(){
+	while (Size){
+		pop_front();
+	}
+}
+
+
+MyString& List::operator[](const int index){
+	int counter = 0;
+	Node* current = this->head;
+	while (current != nullptr){
+		if (counter == index){
+			return current->data;
+		}
+		current = current->pNext;
+		counter++;
+	}
+}
+
+void List::push_front(MyString data){
+	head = new Node(data, head);
+	Size++;
+}
+
+
+void List::insert(MyString data, int index){
+	if (index == 0){
+		push_front(data);
+	}
+	else{
+		Node* previous = this->head;
+		for (int i = 0; i < index - 1; i++){
+			previous = previous->pNext;
+		}
+		Node* newNode = new Node(data, previous->pNext);
+		previous->pNext = newNode;
+		Size++;
+	}
+
+
+
+
+
+}
+
+
+void List::removeAt(int index){
+	if (index == 0){
+		pop_front();
+	}
+	else{
+		Node* previous = this->head;
+		for (int i = 0; i < index - 1; i++){
+			previous = previous->pNext;
+		}
+		Node* toDelete = previous->pNext;
+		previous->pNext = toDelete->pNext;
+		delete toDelete;
+		Size--;
+	}
+
+}
+
+
+void List::pop_back(){
+	removeAt(Size - 1);
+}
+
+void readTxt(const char *nameTxt, fstream& fs, List& other) {
+
+    fs.open(nameTxt, fstream::out | fstream::in | fstream::app);
+    if (!fs.is_open()) {
+        cout << "File " << nameTxt << " opening error!" << endl;
+    }
+    else {
+        cout << "File " << nameTxt << " open" << endl;
+        string z;
+        while (!fs.eof()) {
+            z = "";
+            getline(fs, z);
+            other.push_back(z);
+        }
+    }
+    fs.close();
+}
+
+void writeTxtSeparator(const char* nameTxt, fstream& fs) {
+    fs.open(nameTxt, fstream::out | fstream::in | fstream::app);
+    if (!fs.is_open()) {
+        cout << "Error open File!";
+    }
+    else {
+        cout << "Open " << nameTxt << " File!" << endl;
+        fs << "--------------------------------------------------------" << '\n';
+    }
+    fs.close();
+}
+
+void writeTxt(const char *nameTxt, fstream& fs, List& other, int size = 0) {
+    fs.open(nameTxt, fstream::out | fstream::in | fstream::app);
+    if (!fs.is_open()) {
+        cout << "Error open File!";
+    }
+    else {
+        cout << "Open " << nameTxt<< " File!" << endl;
+        fs << nameTxt << '\n';
+        for (int i = 0; i <= size; i++) {
+            fs << other[i] << '\n';
+        }
+    }
+    fs.close();
+}
+
+void writeBusPassengers(const char *nameTxt, fstream& fs, List& other, int&& size) {
+    writeTxt(nameTxt,fs,other,size);
+    writeTxtSeparator(nameTxt, fs);
+}
+
+void busLoading(List& otherOne, List& otherTwo, int size) {
+    for (int i = 0; i < size; i++) {
+        otherOne.push_back(otherTwo[0]);
+        otherTwo.pop_front();
+    }
+}
+
+void  busUnloading(List& other, int size,const char* nameTxt,fstream& fs) {
+    while (size) {
+        writeTxt(nameTxt, fs, other);
+        other.pop_front();
+        size--;
+    }
+    writeTxtSeparator(nameTxt, fs);
+}
+
+int getRandomNumber(int min, int max) {
+    static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+    return static_cast<int>(rand() * fraction * (max - min + 1) + min);
+}
+
+int main() {
+    srand(static_cast<unsigned int>(time(0)));
+    rand();
+    List busStopA;
+    List busStopC;
+    List busStopB;
+    List busStopD;
+    List busStopG;
+    List bus;
+    fstream fs;
+    const char* nameTxtA = "A.txt";
+    const char* nameTxtB = "B.txt";
+    const char* nameTxtC = "C.txt";
+    const char* nameTxtD = "D.txt";
+    const char* nameTxtG = "G.txt";
+    const char* nameReleased = "nameReleased.txt";
+    const char* namePassengers = "namePassengers.txt";
+    const char* nameAllPassengersBusStop = "nameAllPassengersBusStop.txt";
+    readTxt(nameTxtA, fs, busStopA);
+    readTxt(nameTxtB, fs, busStopB);
+    readTxt(nameTxtC, fs, busStopC);
+    readTxt(nameTxtD, fs, busStopD);
+    readTxt(nameTxtG, fs, busStopG);
+    int sizeBusMax = 6;
+    int sizeBusMin = 1;
+    int sizeBusMidlle = 3;
+    const int variableOne = getRandomNumber(sizeBusMin, sizeBusMidlle);
+
+    // bus point A
+    busLoading(bus, busStopA, sizeBusMax); // passengers get on the bus
+    writeBusPassengers(namePassengers, fs, bus, bus.getSize() - 1); // bus passengers
+    writeTxt(nameAllPassengersBusStop, fs, busStopA, busStopA.getSize() - 1); // passengers point A
+
+    //bus point C
+    busUnloading(bus, variableOne, nameReleased, fs);  //  passengers get off the bus, write neamRealeased
+    busLoading(bus, busStopC, variableOne); // passengers get on the bus
+    writeBusPassengers(namePassengers, fs, bus, bus.getSize() - 1); // bus passengers
+    writeTxt(nameAllPassengersBusStop, fs, busStopC, busStopC.getSize() - 1); // passengers point C
+
+    //bus point D
+    const int variableTwo = getRandomNumber(sizeBusMin, sizeBusMidlle);
+    busUnloading(bus, variableTwo, nameReleased, fs);  //  passengers get off the bus, write neamRealeased
+    busLoading(bus, busStopD, variableTwo); // passengers get on the bus
+    writeBusPassengers(namePassengers, fs, bus, bus.getSize() - 1); // bus passengers
+    writeTxt(nameAllPassengersBusStop, fs, busStopD, busStopD.getSize() - 1); // passengers point C    
+
+    //bus point B
+    busUnloading(bus, sizeBusMax, nameReleased, fs);  // bus point D, write neamRealeased
+    busLoading(bus, busStopB, sizeBusMax); // passengers get on the bus
+    writeBusPassengers(namePassengers, fs, bus, bus.getSize() - 1); // bus passengers
+    writeTxt(nameAllPassengersBusStop, fs, busStopB, busStopB.getSize() - 1); // passengers point A
+
+    //bus not point G
+    writeTxt(nameAllPassengersBusStop, fs, busStopG, busStopG.getSize() - 1); // passengers point A
+    
+    return 0;
+}

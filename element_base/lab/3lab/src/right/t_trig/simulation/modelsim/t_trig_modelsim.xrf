@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Worker04/Desktop/1335/lab3/t_trig/t_trig.bdf
+source_file = 1, C:/Users/Worker04/Desktop/1335/lab3/t_trig/Waveform.vwf
+source_file = 1, C:/Users/Worker04/Desktop/1335/lab3/t_trig/db/t_trig.cbx.xml
+design_name = t_trig
+instance = comp, \Q_dlatch~output , Q_dlatch~output, t_trig, 1
+instance = comp, \Q_dff~output , Q_dff~output, t_trig, 1
+instance = comp, \T~input , T~input, t_trig, 1
+instance = comp, \inst1~0 , inst1~0, t_trig, 1
+instance = comp, \inst~0 , inst~0, t_trig, 1

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\quartus\bin64\work\LR1_4\lab3\d_trig\simulation\qsim
+vd_trig
+Z1 I2n8^onbcKEZ0ZT`K<@gOC2
+Z2 VC_O9SK[z:=<7lgcEkPE]Z2
+Z3 dC:\Users\Worker04\Desktop\1335\lab3\d_trig\simulation\qsim
+Z4 w1737017265
+Z5 8d_trig.vo
+Z6 Fd_trig.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|d_trig.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 LKbbNLVecbYX^1zYMl06Q2
+!s85 0
+Z11 !s108 1737017276.464000
+Z12 !s107 d_trig.vo|
+!s101 -O0
+vd_trig_vlg_check_tst
+!i10b 1
+!s100 :dcoMZCe<YNV2O@B:9S2^3
+I@i[i[HR<L8@i0W@G;Cd>f2
+Z13 VW[WgziBz8GPlm_hbY8Qg<3
+R3
+Z14 w1737017263
+Z15 8Waveform_d_trig.vwf.vt
+Z16 FWaveform_d_trig.vwf.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z17 !s108 1737017277.058000
+Z18 !s107 Waveform_d_trig.vwf.vt|
+Z19 !s90 -work|work|Waveform_d_trig.vwf.vt|
+!s101 -O0
+R9
+vd_trig_vlg_sample_tst
+!i10b 1
+!s100 FY29@ekk[1c=:Db_BbnM43
+I^01TCPllUXVCbaXKi:D=g2
+Z20 VL9zE@HT@HTJ9NCLJleGO41
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+vd_trig_vlg_vec_tst
+!i10b 1
+!s100 ilhmo]Emi^ghz5Z[KgRXE2
+I:jC0aEG?cYfSNLz>B7k<=3
+Z21 V3ZSKTL6:>MZKf_CQo5dbG0
+R3
+R14
+R15
+R16
+Z22 L0 331
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9

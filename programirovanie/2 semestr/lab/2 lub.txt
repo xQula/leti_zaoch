@@ -1,0 +1,134 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+template<typename T>
+class List
+{
+public:
+	List();
+	~List();
+	void pop_front();
+	void push_back(T data);
+	void clear();
+	int getSize() { return Size; }
+	T& operator[](const int index);
+
+protected:
+
+	template<typename T>
+	class Node {
+	public:
+		Node* pNext;
+		T data;
+		Node(T data = T(), Node* pNext = nullptr) {
+			this->data = data;
+			this->pNext = pNext;
+		}
+	};
+	int Size;
+	Node<T>* head;
+};
+
+
+template<typename T>
+List<T>::List() {
+	Size = 0;
+	head = nullptr;
+}
+
+
+template<typename T>
+List<T>::~List() {
+	clear();
+}
+
+
+template<typename T>
+void List<T>::pop_front() {
+	Node<T>* temp = head;
+	head = head->pNext;
+	delete temp;
+	Size--;
+}
+
+template<typename T>
+void List<T>::push_back(T data) {
+	if (head == nullptr) {
+		head = new Node<T>(data);
+	}
+	else {
+		Node<T>* current = this->head;
+		while (current->pNext != nullptr) {
+			current = current->pNext;
+		}
+		current->pNext = new Node<T>(data);
+	}
+	Size++;
+}
+
+template<typename T>
+void List<T>::clear() {
+	while (Size) {
+		pop_front();
+	}
+}
+
+
+template<typename T>
+T& List<T>::operator[](const int index) {
+	int counter = 0;
+	Node<T>* current = this->head;
+	while (current != nullptr) {
+		if (counter == index) {
+			return current->data;
+		}
+		current = current->pNext;
+		counter++;
+	}
+}
+
+int main() {
+	List <int> list;
+	fstream fs;
+	int length = 0;
+	fs.open("myFile.txt", fstream::out | fstream::in);
+	if (!fs.is_open()) {
+		cout << "Error open File!";
+	}
+	else {
+		cout << "Open File!" << endl;;
+		string z;
+		while (!fs.eof()) {
+			z = "";
+			getline(fs, z);
+			const char* d = z.c_str();
+			int res = atoi(d);
+			list.push_back(res);
+			length++;
+		}
+	}
+	fs.close();
+
+	int variable = 10;
+	list.clear();
+	for (int i = 0; i < length; i++) {
+		list.push_back(variable);
+	}
+
+	fs.open("myFile.txt", fstream::out | fstream::in);
+	if (!fs.is_open()) {
+		cout << "Error open File!";
+	}
+	else {
+		cout << "Open File!" << endl;;
+		for (int i = 0; i < length; i++) {
+			fs << list[i] << '\n';
+		}
+	}
+	fs.close();
+	list.clear();
+
+	return 0;
+}

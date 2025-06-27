@@ -1,0 +1,486 @@
+$comment
+	File created using the following command:
+		vcd file Lab6.msim.vcd -direction
+$end
+$date
+	Wed Jan 22 22:31:38 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Lab6_vlg_vec_tst $end
+$var reg 1 ! C $end
+$var reg 1 " R $end
+$var wire 1 # D0 $end
+$var wire 1 $ D1 $end
+$var wire 1 % D2 $end
+$var wire 1 & D3 $end
+$var wire 1 ' D4 $end
+$var wire 1 ( D5 $end
+$var wire 1 ) D6 $end
+$var wire 1 * Test [3] $end
+$var wire 1 + Test [2] $end
+$var wire 1 , Test [1] $end
+$var wire 1 - Test [0] $end
+$var wire 1 . sampler $end
+$scope module i1 $end
+$var wire 1 / gnd $end
+$var wire 1 0 vcc $end
+$var wire 1 1 unknown $end
+$var tri1 1 2 devclrn $end
+$var tri1 1 3 devpor $end
+$var tri1 1 4 devoe $end
+$var wire 1 5 D2~output_o $end
+$var wire 1 6 D4~output_o $end
+$var wire 1 7 D0~output_o $end
+$var wire 1 8 D6~output_o $end
+$var wire 1 9 D1~output_o $end
+$var wire 1 : D3~output_o $end
+$var wire 1 ; D5~output_o $end
+$var wire 1 < Test[3]~output_o $end
+$var wire 1 = Test[2]~output_o $end
+$var wire 1 > Test[1]~output_o $end
+$var wire 1 ? Test[0]~output_o $end
+$var wire 1 @ C~input_o $end
+$var wire 1 A inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~combout $end
+$var wire 1 B inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~_wirecell_combout $end
+$var wire 1 C R~input_o $end
+$var wire 1 D inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]~0_combout $end
+$var wire 1 E inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit[3]~1_combout $end
+$var wire 1 F inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita0~COUT $end
+$var wire 1 G inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~combout $end
+$var wire 1 H inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~_wirecell_combout $end
+$var wire 1 I inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita1~COUT $end
+$var wire 1 J inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~combout $end
+$var wire 1 K inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~_wirecell_combout $end
+$var wire 1 L inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita2~COUT $end
+$var wire 1 M inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~combout $end
+$var wire 1 N inst3|LPM_COUNTER_component|auto_generated|counter_comb_bita3~_wirecell_combout $end
+$var wire 1 O inst6|inst3~0_combout $end
+$var wire 1 P inst6|inst5~0_combout $end
+$var wire 1 Q inst6|inst1~0_combout $end
+$var wire 1 R inst6|inst7~0_combout $end
+$var wire 1 S inst6|inst2~0_combout $end
+$var wire 1 T inst6|inst4~0_combout $end
+$var wire 1 U inst6|inst6~combout $end
+$var wire 1 V inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit [3] $end
+$var wire 1 W inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit [2] $end
+$var wire 1 X inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit [1] $end
+$var wire 1 Y inst3|LPM_COUNTER_component|auto_generated|counter_reg_bit [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+1#
+0$
+0%
+0&
+1'
+1(
+1)
+1-
+1,
+1+
+1*
+x.
+0/
+10
+x1
+12
+13
+14
+05
+16
+17
+18
+09
+0:
+1;
+1<
+1=
+1>
+1?
+0@
+0A
+1B
+1C
+0D
+1E
+1F
+0G
+1H
+0I
+0J
+1K
+1L
+0M
+1N
+0O
+1P
+1Q
+1R
+0S
+0T
+1U
+0Y
+0X
+0W
+0V
+$end
+#20000
+0"
+0C
+0.
+0E
+#50000
+1!
+1@
+1.
+1V
+1W
+1X
+1Y
+1M
+0L
+1J
+1I
+1G
+0F
+1A
+0<
+0=
+0>
+0?
+0*
+0+
+0,
+0-
+1T
+1S
+0R
+0P
+1O
+0N
+0M
+0K
+0J
+0H
+0G
+0B
+1:
+19
+08
+06
+15
+1&
+1$
+0)
+0'
+1%
+1N
+1K
+1H
+#100000
+0!
+0@
+0.
+#150000
+1!
+1@
+1.
+0Y
+1F
+0A
+1?
+1-
+0U
+0T
+0Q
+1P
+1G
+1B
+0;
+0:
+07
+16
+0(
+0&
+0#
+1'
+0H
+#200000
+0!
+0@
+0.
+#250000
+1!
+1@
+1.
+0X
+1Y
+0I
+0G
+0F
+1A
+1>
+0?
+1,
+0-
+1T
+1R
+1Q
+0P
+0O
+1J
+1H
+1I
+1G
+0B
+1:
+18
+17
+06
+05
+1&
+1)
+1#
+0'
+0%
+0K
+0J
+0H
+1K
+#300000
+0!
+0@
+0.
+#350000
+1!
+1@
+1.
+0Y
+1F
+0A
+1?
+1-
+1P
+1O
+0I
+0G
+1B
+16
+15
+1'
+1%
+1J
+1H
+0K
+#400000
+0!
+0@
+0.
+#450000
+1!
+1@
+1.
+0W
+1X
+1Y
+1L
+0J
+1D
+1I
+1G
+0F
+1A
+1=
+0>
+0?
+1+
+0,
+0-
+1U
+0T
+0Q
+0P
+1M
+1K
+0L
+1J
+0H
+0G
+0B
+1;
+0:
+07
+06
+1(
+0&
+0#
+0'
+0N
+0M
+0K
+1H
+1N
+#500000
+0!
+0@
+0.
+#550000
+1!
+1@
+1.
+0Y
+1E
+1F
+0A
+1?
+1-
+1T
+0S
+1Q
+1G
+1B
+1:
+09
+17
+1&
+0$
+1#
+0H
+#600000
+0!
+0@
+0.
+#650000
+1!
+1@
+1.
+0V
+1W
+1M
+0D
+0J
+1<
+0=
+1*
+0+
+1S
+0N
+0E
+1K
+19
+1$
+#700000
+0!
+0@
+0.
+#750000
+1!
+1@
+1.
+0X
+1Y
+0I
+0G
+0F
+1A
+1>
+0?
+1,
+0-
+0T
+1P
+1J
+1H
+1I
+1G
+0B
+0:
+16
+0&
+1'
+0K
+0J
+0H
+1K
+#800000
+0!
+0@
+0.
+#850000
+1!
+1@
+1.
+0Y
+1F
+0A
+1?
+1-
+1T
+0S
+0Q
+0I
+0G
+1B
+1:
+09
+07
+1&
+0$
+0#
+1J
+1H
+0K
+#900000
+0!
+0@
+0.
+#950000
+1!
+1@
+1.
+0W
+1X
+1Y
+1L
+0J
+1I
+1G
+0F
+1A
+1=
+0>
+0?
+1+
+0,
+0-
+0R
+1Q
+0O
+0M
+1K
+0L
+1J
+0H
+0G
+0B
+08
+17
+05
+0)
+1#
+0%
+1N
+1M
+0K
+1H
+0N
+#1000000

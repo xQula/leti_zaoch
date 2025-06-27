@@ -1,0 +1,14 @@
+LPM_AVALUE=0
+LPM_DIRECTION=UP
+LPM_PORT_UPDOWN=PORT_UNUSED
+LPM_TYPE=LPM_COUNTER
+LPM_WIDTH=4
+DEVICE_FAMILY="Cyclone III"
+aclr
+aload
+aset
+clock
+data
+sclr
+sload
+q

@@ -1,0 +1,7 @@
+|t_trig
+Q_dlatch <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+T => inst1.LATCH_ENABLE
+T => inst.CLK
+Q_dff <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+

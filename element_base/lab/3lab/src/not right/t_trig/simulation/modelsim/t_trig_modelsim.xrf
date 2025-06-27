@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/13.0sp1/quartus/bin64/work/LR1_4/lab3/t_trig/t_trig.bdf
+source_file = 1, C:/altera/13.0sp1/quartus/bin64/work/LR1_4/lab3/t_trig/Waveform.vwf
+source_file = 1, C:/altera/13.0sp1/quartus/bin64/work/LR1_4/lab3/t_trig/db/t_trig.cbx.xml
+design_name = t_trig
+instance = comp, \T~I , T, t_trig, 1
+instance = comp, \inst1~0 , inst1~0, t_trig, 1
+instance = comp, \inst~0 , inst~0, t_trig, 1
+instance = comp, \Q_dlatch~I , Q_dlatch, t_trig, 1
+instance = comp, \Q_dff~I , Q_dff, t_trig, 1

@@ -1,0 +1,268 @@
+$comment
+	File created using the following command:
+		vcd file Lab2_seven_seg.msim.vcd -direction
+$end
+$date
+	Sat Nov 09 21:32:26 2024
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module seven_seg_vlg_vec_tst $end
+$var reg 4 ! X [4:1] $end
+$var wire 1 " D0 $end
+$var wire 1 # D1 $end
+$var wire 1 $ D2 $end
+$var wire 1 % D3 $end
+$var wire 1 & D4 $end
+$var wire 1 ' D5 $end
+$var wire 1 ( D6 $end
+$var wire 1 ) DP $end
+$var wire 1 * sampler $end
+$scope module i1 $end
+$var wire 1 + gnd $end
+$var wire 1 , vcc $end
+$var wire 1 - unknown $end
+$var tri1 1 . devclrn $end
+$var tri1 1 / devpor $end
+$var tri1 1 0 devoe $end
+$var wire 1 1 inst1~0_combout $end
+$var wire 1 2 inst2~0_combout $end
+$var wire 1 3 inst3~0_combout $end
+$var wire 1 4 inst4~combout $end
+$var wire 1 5 inst5~0_combout $end
+$var wire 1 6 inst6~0_combout $end
+$var wire 1 7 inst7~0_combout $end
+$var wire 1 8 X~combout [4] $end
+$var wire 1 9 X~combout [3] $end
+$var wire 1 : X~combout [2] $end
+$var wire 1 ; X~combout [1] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+1"
+1#
+1$
+1%
+1&
+1'
+0(
+0)
+x*
+0+
+1,
+x-
+1.
+1/
+10
+01
+02
+03
+04
+05
+06
+17
+0;
+0:
+09
+08
+$end
+#10000
+b1 !
+1;
+0*
+16
+15
+14
+11
+0'
+0&
+0%
+0"
+#20000
+b11 !
+b10 !
+0;
+1:
+1*
+07
+05
+04
+13
+01
+1(
+1&
+1%
+0$
+1"
+#30000
+b11 !
+1;
+0*
+15
+03
+0&
+1$
+#40000
+b111 !
+b101 !
+b100 !
+0;
+0:
+19
+1*
+06
+14
+11
+1'
+0%
+0"
+#50000
+b101 !
+1;
+0*
+04
+12
+01
+1%
+0#
+1"
+#60000
+b111 !
+b110 !
+0;
+1:
+1*
+05
+1&
+#70000
+b111 !
+1;
+0*
+17
+16
+15
+14
+02
+0(
+0'
+0&
+0%
+1#
+#80000
+b1111 !
+b1011 !
+b1001 !
+b1000 !
+0;
+0:
+09
+18
+1*
+07
+06
+05
+04
+1(
+1'
+1&
+1%
+#90000
+b1001 !
+1;
+0*
+15
+0&
+#100000
+b1011 !
+b1010 !
+0;
+1:
+1*
+05
+14
+1&
+0%
+#110000
+b1011 !
+1;
+0*
+04
+12
+11
+1%
+0#
+0"
+#120000
+b1111 !
+b1101 !
+b1100 !
+0;
+0:
+19
+1*
+17
+13
+01
+0(
+0$
+1"
+#130000
+b1101 !
+1;
+0*
+07
+16
+03
+02
+11
+1(
+0'
+1$
+1#
+0"
+#140000
+b1111 !
+b1110 !
+0;
+1:
+1*
+06
+13
+12
+01
+1'
+0$
+0#
+1"
+#150000
+b1111 !
+1;
+0*
+14
+0%
+#160000
+b111 !
+b11 !
+b1 !
+b0 !
+0;
+0:
+09
+08
+1*
+17
+04
+03
+02
+0(
+1%
+1$
+1#
+#165000

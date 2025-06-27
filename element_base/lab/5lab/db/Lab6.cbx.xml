@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab6">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab6|Lab22:inst|lpm_decode0:inst|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_lbf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab6|lpm_constant0:inst5|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_fe6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab6|lpm_counter0:inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_55k.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab6|lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab6|lpm_decode0:inst11|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_lbf.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

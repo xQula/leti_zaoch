@@ -1,0 +1,138 @@
+$comment
+	File created using the following command:
+		vcd file t_trig.msim.vcd -direction
+$end
+$date
+	Thu Jan 16 14:00:23 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module t_trig_vlg_vec_tst $end
+$var reg 1 ! T $end
+$var wire 1 " Q_dff $end
+$var wire 1 # Q_dlatch $end
+$var wire 1 $ sampler $end
+$scope module i1 $end
+$var wire 1 % gnd $end
+$var wire 1 & vcc $end
+$var wire 1 ' unknown $end
+$var tri1 1 ( devclrn $end
+$var tri1 1 ) devpor $end
+$var tri1 1 * devoe $end
+$var wire 1 + Q_dlatch~output_o $end
+$var wire 1 , Q_dff~output_o $end
+$var wire 1 - T~input_o $end
+$var wire 1 . inst1~0_combout $end
+$var wire 1 / inst~0_combout $end
+$var wire 1 0 inst~q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+x#
+x$
+0%
+1&
+x'
+1(
+1)
+1*
+x+
+0,
+0-
+x.
+1/
+00
+$end
+#30000
+1!
+1-
+0$
+10
+0/
+1,
+1"
+#40000
+0!
+0-
+1$
+#50000
+1!
+1-
+0$
+00
+1/
+0,
+0"
+#60000
+0!
+0-
+1$
+#70000
+1!
+1-
+0$
+10
+0/
+1,
+1"
+#80000
+0!
+0-
+1$
+#90000
+1!
+1-
+0$
+00
+1/
+0,
+0"
+#100000
+0!
+0-
+1$
+#110000
+1!
+1-
+0$
+10
+0/
+1,
+1"
+#120000
+0!
+0-
+1$
+#130000
+1!
+1-
+0$
+00
+1/
+0,
+0"
+#140000
+0!
+0-
+1$
+#150000
+1!
+1-
+0$
+10
+0/
+1,
+1"
+#160000
+0!
+0-
+1$
+#165000

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'C'
+Slack : -1.723
+TNS   : -22.803
+
+Type  : Slow 1200mV 85C Model Setup 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -1.131
+TNS   : -4.220
+
+Type  : Slow 1200mV 85C Model Hold 'C'
+Slack : -0.035
+TNS   : -0.035
+
+Type  : Slow 1200mV 85C Model Hold 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : 0.860
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'C'
+Slack : -3.000
+TNS   : -27.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Setup 'C'
+Slack : -1.389
+TNS   : -17.270
+
+Type  : Slow 1200mV 0C Model Setup 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -0.918
+TNS   : -3.383
+
+Type  : Slow 1200mV 0C Model Hold 'C'
+Slack : -0.049
+TNS   : -0.049
+
+Type  : Slow 1200mV 0C Model Hold 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : 0.771
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'C'
+Slack : -3.000
+TNS   : -27.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Setup 'C'
+Slack : -0.553
+TNS   : -3.512
+
+Type  : Fast 1200mV 0C Model Setup 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -0.171
+TNS   : -0.533
+
+Type  : Fast 1200mV 0C Model Hold 'C'
+Slack : -0.030
+TNS   : -0.030
+
+Type  : Fast 1200mV 0C Model Hold 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'C'
+Slack : -3.000
+TNS   : -28.568
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lpm_counter1:inst15|lpm_counter:LPM_COUNTER_component|cntr_jph:auto_generated|counter_reg_bit[23]'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------
